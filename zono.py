@@ -4,12 +4,18 @@ import sounddevice as sd
 import numpy as np
 import tempfile
 import os
-import pyaudio
 import wave
 from gtts import gTTS  # Google Text-to-Speech
 import torch
 from transformers import LlamaTokenizer, LlamaForCausalLM
 from huggingface_hub import login
+import asyncio  # ✅ Added asyncio import
+
+# ✅ Initialize Asyncio Event Loop
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    asyncio.run(asyncio.sleep(0))  # This initializes an event loop
 
 # ✅ Set Page Configuration
 st.set_page_config(page_title="Echo_Script", page_icon="🎙️", layout="centered")
@@ -30,7 +36,6 @@ st.markdown(
             background: linear-gradient(135deg, #F0F8FF, #E6E6FA); /* Light Blue to Lavender Gradient */
             color: black;
         }
-
         /* Title Styling */
         .stMarkdown h1 {
             color: #4B0082; /* Indigo */
@@ -39,7 +44,6 @@ st.markdown(
             font-weight: bold;
             font-family: 'Arial', sans-serif;
         }
-
         /* Button Styling */
         .stButton > button {
             background: linear-gradient(90deg, #FFD700, #FFA07A); /* Gold to Light Salmon */
@@ -55,14 +59,12 @@ st.markdown(
             background: linear-gradient(90deg, #FFA07A, #FFD700); /* Reverse Gradient */
             transform: scale(1.05);
         }
-
         /* File Upload & Input Styling */
         .stFileUploader label, .stTextInput label {
             color: #4B0082; /* Indigo */
             font-size: 18px;
             font-weight: bold;
         }
-
         /* Transcription Box */
         .stMarkdown p {
             background: rgba(255, 255, 255, 0.8);
@@ -71,7 +73,6 @@ st.markdown(
             font-size: 16px;
             font-weight: bold;
         }
-
         /* Audio Player */
         .stAudio {
             background: rgba(255, 255, 255, 0.5);
