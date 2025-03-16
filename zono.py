@@ -4,6 +4,7 @@ import sounddevice as sd
 import numpy as np
 import tempfile
 import os
+import pyaudio
 import wave
 from gtts import gTTS  # Google Text-to-Speech
 import torch
