@@ -12,3 +12,5 @@ asyncio
 sentencepiece
 torchvision
 torchaudio
+LlamaTokenizer
+LlamaForCausalLM
