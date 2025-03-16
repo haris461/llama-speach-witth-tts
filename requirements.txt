@@ -1,5 +1,5 @@
 streamlit
-whisper
+openai-whisper
 sounddevice
 numpy
 torch
@@ -8,3 +8,4 @@ huggingface_hub
 wave
 gtts
 portaudio
+
