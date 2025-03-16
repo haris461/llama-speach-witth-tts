@@ -9,5 +9,5 @@ wave
 gtts
 pyaudio
 asyncio 
-
+sentencepiece
 
