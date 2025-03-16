@@ -7,5 +7,5 @@ transformers
 huggingface_hub
 wave
 gtts
-portaudio
+
 
