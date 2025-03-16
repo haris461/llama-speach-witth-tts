@@ -7,5 +7,6 @@ transformers
 huggingface_hub
 wave
 gtts
+pyaudio
 
 
