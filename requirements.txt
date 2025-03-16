@@ -10,4 +10,5 @@ gtts
 pyaudio
 asyncio 
 sentencepiece
-
+torchvision
+torchaudio
