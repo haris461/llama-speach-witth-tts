@@ -8,6 +8,6 @@ huggingface_hub
 wave
 gtts
 pyaudio
-
+asyncio 
 
 
