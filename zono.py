@@ -25,7 +25,7 @@ login("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")
 
 # ✅ Load LLaMA Model
 tokenizer = LlamaTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
-model = LlamaForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0" , device_map="cpu" )
+model = LlamaForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0" )
 
 # ✅ Apply Custom Styling
 st.markdown(
